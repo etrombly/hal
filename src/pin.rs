@@ -7,6 +7,9 @@ pub trait Pin {
 
     /// Turns on the Pin
     fn on(&self);
+
+    /// Return the pin state
+    fn digitalRead(&self) -> State;
 }
 
 /// pin mode, input or output
@@ -15,3 +18,11 @@ pub enum Mode {
     INPUT, 
     /// output mode
     OUTPUT}
+
+/// pin state, high or low
+pub enum State {
+    /// high state
+    HIGH,
+    /// low state
+    LOW,
+}
