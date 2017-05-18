@@ -1,11 +1,4 @@
-//! User LEDs
-
-/// pin mode, input or output
-pub enum Mode {
-    /// input mode
-    INPUT, 
-    /// output mode
-    OUTPUT}
+//! GPIO pins
 
 /// Represents a pin
 pub trait Pin {
@@ -15,3 +8,10 @@ pub trait Pin {
     /// Turns on the Pin
     fn on(&self);
 }
+
+/// pin mode, input or output
+pub enum Mode {
+    /// input mode
+    INPUT, 
+    /// output mode
+    OUTPUT}
