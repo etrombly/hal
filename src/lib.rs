@@ -21,3 +21,4 @@
 #![feature(associated_type_defaults)]
 
 pub mod timer;
+pub mod pin;
