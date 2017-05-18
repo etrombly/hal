@@ -9,7 +9,7 @@ pub trait Pin {
     fn on(&self);
 
     /// Return the pin state
-    fn digitalRead(&self) -> State;
+    fn digital_read(&self) -> State;
 }
 
 /// pin mode, input or output
