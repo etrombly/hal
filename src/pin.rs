@@ -9,6 +9,14 @@ pub trait Pin {
     fn on(&self);
 
     /// Return the pin state
+    fn digital_write(&self, state: &State){
+        match *state{
+            State::HIGH => self.on(),
+            State::LOW => self.off(),
+        }
+    }
+
+    /// Return the pin state
     fn digital_read(&self) -> State;
 }
 
