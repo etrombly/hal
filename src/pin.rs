@@ -1,7 +1,7 @@
 //! GPIO pins
 
 /// Represents a pin
-pub trait Pin {
+pub trait Pin<T> {
     /// Turns off the Pin
     fn off(&self);
 
@@ -18,14 +18,24 @@ pub trait Pin {
 
     /// Return the pin state
     fn digital_read(&self) -> State;
+
+    /// Return analog value
+    fn analog_read(&self) -> T;
+
+    /// pwm write
+    fn analog_write(&self, duty_cycle: u8);
 }
 
 /// pin mode, input or output
 pub enum Mode {
-    /// input mode
+    /// input
     INPUT, 
-    /// output mode
-    OUTPUT}
+    /// analog input
+    ANALOG_INPUT,
+    /// output
+    OUTPUT,
+    /// analog output
+    ANALOG_OUTPUT,}
 
 /// pin state, high or low
 pub enum State {
