@@ -23,7 +23,7 @@ pub trait Pin<T> {
     fn analog_read(&self) -> T;
 
     /// pwm write
-    fn analog_write(&self, duty_cycle: u8);
+    fn pwm_write(&self, duty_cycle: u8);
 }
 
 /// pin mode, input or output
@@ -35,7 +35,7 @@ pub enum Mode {
     /// output
     OUTPUT,
     /// analog output
-    ANALOG_OUTPUT,}
+    PWM_OUTPUT,}
 
 /// pin state, high or low
 pub enum State {
